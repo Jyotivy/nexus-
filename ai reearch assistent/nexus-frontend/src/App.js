@@ -39,17 +39,6 @@ const CHAT_PROMPTS = [
 // ─── UTILS ──────────────────────────────────────────────────────
 function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
 
-function parseAIJson(text) {
-  try {
-    const clean = text.replace(/```json|```/g, "").trim();
-    return JSON.parse(clean);
-  } catch {
-    const match = text.match(/\{[\s\S]*\}/);
-    if (match) { try { return JSON.parse(match[0]); } catch {} }
-    return null;
-  }
-}
-
 // ─── SAVE / BOOKMARK LIBRARY (localStorage, per-user) ────────────
 // "saved" = full research reports the student wants to keep long-term
 // "bookmarks" = quick markers on topics to revisit later
