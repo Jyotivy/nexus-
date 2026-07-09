@@ -5,8 +5,7 @@ structured, study-ready package: a live-source-grounded summary, key terms,
 exam-style notes, a conversational chat grounded in the same sources, and a
 personalized phase-by-phase study roadmap for actually learning the topic.
 
-**🔴 Live demo:** [https://YOUR-LIVE-URL.vercel.app](https://YOUR-LIVE-URL.vercel.app)
-*(replace this with your real Vercel URL once deployed)*
+**🔴 Live demo:** https://nexus-swart-eight-12.vercel.app/
 
 ---
 
@@ -73,15 +72,6 @@ Directory** setting:
 | Backend  | Render   | `nexus-backend`   |
 | Frontend | Vercel   | `nexus-frontend`  |
 
-**Backend env vars (Render):** `EXA_API_KEY`, `GROQ_API_KEY`, `PORT`
-**Frontend env vars (Vercel):** `REACT_APP_BACKEND_URL` (your Render backend URL)
 
-## 📸 Screenshots
 
-*(Add a screenshot or two here — landing page, results page, roadmap —
-they make a portfolio repo look a lot more finished)*
 
----
-
-Built as a personal/academic project exploring full-stack AI product design —
-frontend UX, backend API design, third-party AI/search API integration, and auth.
