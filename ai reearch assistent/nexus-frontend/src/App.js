@@ -161,12 +161,12 @@ function downloadNotesPDF(data) {
 // In dev, create-react-app proxies "/api/*" if you add a "proxy" field
 // in package.json, e.g.  "proxy": "http://localhost:5000"
 // Otherwise hit the full URL here.
-const API_BASE = "http://localhost:5000";
+const API_BASE = process.env.REACT_APP_BACKEND_URL || "http://localhost:5000";
 
 // ─── RESEARCH GENERATOR ─────────────────────────────────────────
 // Calls YOUR backend's POST /api/research (Exa + Gemini), not Claude.
 async function generateResearch(query) {
-  const res = await fetch(`http://localhost:5000/api/research`, {
+  const res = await fetch(`${API_BASE}/api/research`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ query }),
@@ -178,7 +178,7 @@ async function generateResearch(query) {
 // ─── CHAT HANDLER ───────────────────────────────────────────────
 // Calls YOUR backend's POST /api/chat (Gemini), not Claude.
 async function chatWithContext(history, researchTitle) {
-  const res = await fetch(`http://localhost:5000/api/chat`, {
+  const res = await fetch(`${API_BASE}/api/chat`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ topic: researchTitle, messages: history }),
